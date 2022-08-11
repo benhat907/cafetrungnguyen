@@ -16313,6 +16313,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "d:\\ltweb\\cafetrungnguyen\\Views\\Account\\Login.cshtml",
+      "TargetPath": "Views\\Account\\Login.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "d:\\ltweb\\cafetrungnguyen\\Views\\Shared\\Error.cshtml",
       "TargetPath": "Views\\Shared\\Error.cshtml",
       "FileKind": "mvc"
