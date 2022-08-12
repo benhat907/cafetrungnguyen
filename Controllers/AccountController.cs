@@ -23,7 +23,7 @@ public class AccountController : Controller
     [HttpPost]
     public async Task<JsonResult> LoginMethod(LoginModel log)
     {
-        string query = "SELECT Email, UserName, Password From [User] WHERE Email = @Email and Password = @Password";
+        string query = "SELECT Email, Password From [User] WHERE Email = @Email AND Password = @Password";
         DataTable data = DataProvider.ExcuteQuery(query, new Dictionary<string, object>
         {
             {"@Email", log.Email},
@@ -33,8 +33,8 @@ public class AccountController : Controller
             return Json(new { resault = "Đăng Nhập Thất Bại"} );
 
         return Json(new { resault = "Đăng Nhập Thành Công" });
+     
     }
-    
     [HttpPost]
     public JsonResult RegisterMethod(RegisterModel reg){
         string query = string.Format(@"Insert into [User](IDUser, FirstName, LastName, Email, Password) values(@IDUser, @FirstName, @LastName, @Email, @Password)");
