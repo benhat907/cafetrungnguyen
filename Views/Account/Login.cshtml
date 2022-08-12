@@ -11,10 +11,39 @@
             <input type="Password" name="Password" class="form-control"id="text_password" placeholder="Password">
         </form>
         <div class="box-login-btn">
-            <button type="submit" class="btn btn-primary btn-login"  id="login_btn">Login</button>
+            <button class="btn btn-primary btn-login"  id="loginbtn">Login</button>
         </div>
     </div>
     <div class="signup">
         <button type="submit" class="btn-dangky-tk">Đăng ký tài khoản</button>
     </div>
 </div>
+
+
+@section Scripts{
+    <script>
+        $("#loginbtn").click(() => {
+            $.ajax({
+            type: "POST",
+            url: "/Account/LoginMethod",
+            data: {
+                Email: $("#text_email").val(),
+                PassWord: $("#text_password").val(),
+            },
+            dataType: "json",
+            success: function (res) {
+                if (res.resault == "Đăng Nhập Thành Công") {
+                    alert("đăng nhập thành công");
+                    window.location.href = "/Home/Index";
+                }
+                else {
+                    alert("Đăng nhập không thành công");
+                }
+            },
+            error: function (res) { console.log(res); }
+            }).then((res) => {
+                console.log(res);
+            })
+         })
+    </script>
+}

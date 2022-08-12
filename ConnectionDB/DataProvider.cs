@@ -2,22 +2,35 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using Microsoft.Data.SqlClient;
 
 namespace cafetrungnguyen
 {
     public static class DataProvider
-    {   //Select dùng excutequery
-        public static DataTable ExcuteQuery (string query, Dictionary<string, object> parameters =  null)
+    {
+        public static DataTable ExcuteQuery(string query, Dictionary<string, object> parameters = null)
         {
             try
             {
-                string connectionString = @"Data Source = .\sqlexpress; Initial Catalog = QLcafetrungnguyen; User = sa; Password = votinh111003";
+                string connectionString = @"Data Source = .\sqlexpress; Initial Catalog = QLcafetrungnguyen; User= sa; Password=votinh111003";
+                SqlConnection connection = new SqlConnection(connectionString);
+                connection.Open();
+                if (connection.State != System.Data.ConnectionState.Open)
+                    return new DataTable();
+                SqlCommand cmd = new SqlCommand(query, connection);
+                foreach (var pram in parameters)
+                {
+                    cmd.Parameters.AddWithValue(pram.Key, pram.Value);               
+                }
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dataTable = new DataTable();
+                da.Fill(dataTable);
+                return dataTable;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 return new DataTable();
             }
         }
-
     }
 }

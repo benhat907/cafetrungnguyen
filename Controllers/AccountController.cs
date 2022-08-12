@@ -1,6 +1,7 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using cafetrungnguyen.Models;
+using System.Data;
 
 namespace cafetrungnguyen.Controllers;
 
@@ -15,8 +16,25 @@ public class AccountController : Controller
 
     public IActionResult Login()
     {
+
         return View();
     }
+
+    [HttpPost]
+    public async Task<JsonResult> LoginMethod(LoginModel log)
+    {
+        string query = "SELECT Email, UserName, Password From [User] WHERE Email = @Email and Password = @Password";
+        DataTable data = DataProvider.ExcuteQuery(query, new Dictionary<string, object>
+        {
+            {"@Email", log.Email},
+            {"@Password", log.Password}     
+        });
+        if (data.Rows.Count <= 0)
+            return Json(new { resault = "Đăng Nhập Thất Bại"} );
+
+        return Json(new { resault = "Đăng Nhập Thành Công" });
+    }
+    
 
     public IActionResult Logout()
     {
