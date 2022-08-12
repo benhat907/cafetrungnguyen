@@ -32,5 +32,27 @@ namespace cafetrungnguyen
                 return new DataTable();
             }
         }
+
+        public static int ExcuteNonQuery(string query, Dictionary<string,object> parameters =null){
+            try
+            {
+                string connectionString = @"Data Source  = .\sqlexpress; Initial Catalog = QLcafetrungnguyen; User = sa; Password = votinh111003";
+                SqlConnection connection = new SqlConnection(connectionString);
+                connection.Open();
+                if(connection.State != System.Data.ConnectionState.Open)
+                    return -1;
+                SqlCommand cmd = new SqlCommand(query, connection);
+                if(parameters != null)
+                {
+                    foreach(var pram in parameters){
+                        cmd.Parameters.AddWithValue(pram.Key, pram.Value);
+                    }
+                }
+                return cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex){
+                return -1;
+            }
+        }
     }
 }

@@ -35,7 +35,22 @@ public class AccountController : Controller
         return Json(new { resault = "Đăng Nhập Thành Công" });
     }
     
+    [HttpPost]
+    public JsonResult RegisterMethod(RegisterModel reg){
+        string query = string.Format(@"Insert into [User](IDUser, FirstName, LastName, Email, Password) values(@IDUser, @FirstName, @LastName, @Email, @Password)");
+        int id = 0;
+        int rows = DataProvider.ExcuteNonQuery(query, new Dictionary<string, object>{
+            {"@IDUser", reg.IdUser = reg.IdUser + 1},
+            {"@FirstName", reg.FirstName},
+            {"@LastName", reg.LastName},
+            {"@Email", reg.Email},
+            {"@Password", reg.Password}
+        });
+        if(rows <= 0)
+            return Json(new { resault = "Đăng Ký thất Bại" });
 
+        return Json(new { resault = "Đăng Ký Thành Công" });
+    }
     public IActionResult Logout()
     {
         return View();

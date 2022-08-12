@@ -3,6 +3,7 @@
     Layout = "_LayoutLogin";
 }
 <div class="login-wrapper">
+        <h2>Form Đăng Nhập</h2>
     <div class="box-login-main">
         <form class="form-horizontal" roles="form-horizontal">
             <Label class="label-text">Email</Label>
@@ -14,8 +15,26 @@
             <button class="btn btn-primary btn-login"  id="loginbtn">Login</button>
         </div>
     </div>
-    <div class="signup">
-        <button type="submit" class="btn-dangky-tk">Đăng ký tài khoản</button>
+</div>
+
+<div class="register-wrapper">
+    <h2>Form Đăng Ký</h2>
+    <div class="box-register-main">
+        <form class="form-horizontal" roles="form-horizontal">
+            <Label class="label-text">Email</Label>
+            <input type="text" name="Email-Register" id="register_Email" placeholder="Nhập địa chỉ Email">
+            <Label class="label-text">PassWord</Label>
+            <input type="Password" name="PassWord-Register" id="register_PassWord" placeholder="Nhập Password">
+            <Label class="label-text">Confirm Password</Label>
+            <input type="Password" name="Confirm-Password-Register" id="register_ConfirmPassword" placeholder="Nhập địa chỉ Email">
+            <Label class="label-text">First Name</Label>
+            <input type="text" name="FirstName-Register" id="register_FirstName" placeholder="Nhập FirstName">
+            <Label class="label-text">Last Name</Label>
+            <input type="text" name="LastName-Register" id="register_LastName" placeholder="Nhập LastName">
+        </form>
+        <div class="box-register-btn">
+            <button class="btn btn-primary btn-register" id="registerbtn">submit</button>
+        </div>
     </div>
 </div>
 
@@ -44,6 +63,27 @@
             }).then((res) => {
                 console.log(res);
             })
-         })
+        })
+        $("#registerbtn").click(()=>{
+            $.ajax({
+                type: "POST",
+                url: "/Account/RegisterMethod",
+                data: {
+                    FirstName: $("#register_FirstName").val(),
+                    LastName: $("#register_LastName").val(),
+                    Email: $("#register_Email").val(),
+                    Password: $("#register_Password").val(),
+                    ConfirmPassword: $("#register_ConfirmPassword").val()
+                },
+                dataType: "json",
+                success: function (res) {
+                    if(res.resault == "Đăng Ký Thành Công")
+                        alert("Đăng ký thành Công");
+                    else
+                        alert("Đăng ký không thành công");
+                },
+                error: function (res) { console.log(res);},
+            })
+        })
     </script>
 }
