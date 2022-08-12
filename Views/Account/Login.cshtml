@@ -1,13 +1,20 @@
 @{
     ViewData["Title"] = "Login";
+    Layout = "_LayoutLogin";
 }
 <div class="login-wrapper">
     <div class="box-login-main">
         <form class="form-horizontal" roles="form-horizontal">
-            <Label>Email</Label>
+            <Label class="label-text">Email</Label>
             <input type="text" name="Email" class="form-control"id="text_email" placeholder="Email">
-            <Label>Password</Label>
+            <Label class="label-text">Password</Label>
             <input type="Password" name="Password" class="form-control"id="text_password" placeholder="Password">
         </form>
+        <div class="box-login-btn">
+            <button type="submit" class="btn btn-primary btn-login"  id="login_btn">Login</button>
+        </div>
+    </div>
+    <div class="signup">
+        <button type="submit" class="btn-dangky-tk">Đăng ký tài khoản</button>
     </div>
 </div>

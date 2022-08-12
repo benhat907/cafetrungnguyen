@@ -8,45 +8,49 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = cafetrungnguyen
 build_property.RootNamespace = cafetrungnguyen
-build_property.ProjectDir = d:\ltweb\cafetrungnguyen\
+build_property.ProjectDir = D:\ltweb\cafetrungnguyen\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = d:\ltweb\cafetrungnguyen
+build_property.MSBuildProjectDirectory = D:\ltweb\cafetrungnguyen
 build_property._RazorSourceGeneratorDebug = 
 
-[d:/ltweb/cafetrungnguyen/Views/Account/Login.cshtml]
+[D:/ltweb/cafetrungnguyen/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/ltweb/cafetrungnguyen/Views/Account/Logout.cshtml]
+[D:/ltweb/cafetrungnguyen/Views/Account/Logout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/ltweb/cafetrungnguyen/Views/Home/Index.cshtml]
+[D:/ltweb/cafetrungnguyen/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/ltweb/cafetrungnguyen/Views/Home/Privacy.cshtml]
+[D:/ltweb/cafetrungnguyen/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/ltweb/cafetrungnguyen/Views/Shared/Error.cshtml]
+[D:/ltweb/cafetrungnguyen/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/ltweb/cafetrungnguyen/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/ltweb/cafetrungnguyen/Views/Shared/_LayoutLogin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ltweb/cafetrungnguyen/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/ltweb/cafetrungnguyen/Views/_ViewImports.cshtml]
+[D:/ltweb/cafetrungnguyen/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/ltweb/cafetrungnguyen/Views/_ViewStart.cshtml]
+[D:/ltweb/cafetrungnguyen/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/ltweb/cafetrungnguyen/Views/Shared/_Layout.cshtml]
+[D:/ltweb/cafetrungnguyen/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-p4fdilgfv3
