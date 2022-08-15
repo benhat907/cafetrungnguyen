@@ -37,10 +37,8 @@ public class AccountController : Controller
     }
     [HttpPost]
     public JsonResult RegisterMethod(RegisterModel reg){
-        string query = string.Format(@"INSERT INTO [User](IDUser, FirstName, LastName, Email, [Password]) VALUES(@IDUser, @FirstName, @LastName, @Email,@Password)");
-        reg.IdUser = 0;
+        string query = string.Format(@"INSERT INTO [User](FirstName, LastName, Email, [Password]) VALUES(@FirstName, @LastName, @Email,@Password)");
         int rows = DataProvider.ExcuteNonQuery(query, new Dictionary<string, object>{
-            {"@IDUser", reg.IdUser = reg.IdUser + 1},
             {"@FirstName", reg.FirstName},
             {"@LastName", reg.LastName},
             {"@Email", reg.Email},
